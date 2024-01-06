@@ -12,6 +12,7 @@ console.log(jamotaf('dev',[20,30,5,2] ));
 console.log(jamotaf('mult',[20,30,5,2] ));
 console.log(jamotaf('min',[20,30,5,2] ));
 
+//tamrin avale class jalase 4 
 const Mohammad = {
     firstName: "Mohammad",
     lastName: "Gandom kar",
