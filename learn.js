@@ -42,7 +42,7 @@ console.log(Mohammad.firstName);
 console.log(Mohammad.lastName);
 console.log(Mohammad.hobbies);
 
-const ages = [12, 24 ,48 ,45 ,53 ,15,] ;
+const ages = [12, 24 ,48 ,45 ,54 ,15,] ;
  
 let total = 0 ;
 
@@ -72,4 +72,77 @@ randomNumbers( function (a, b, c) {
 ages.forEach(function (v, i) {
     total += v
 console.log(v , i)
+}) ;
+
+// map -> [10] => [10] :))
+
+const addedAges = ages.map(function (value) {
+    return value + 10 ;
+});
+
+console.log(addedAges);
+
+// find -> show only first value -_-
+
+const findAges = ages.find(function (value){
+    if (value >= 48) return value ;
+});
+
+console.log(findAges);
+
+// filter -> show all values we want :)
+
+const filteredAges = ages.filter(function(value) {
+    if (value >= 45) return value ;
+
+});
+console.log(filteredAges) ;
+
+// tamrin khodam :))
+
+const added_filtered_Ages = filteredAges.map(function(value){
+    return value / 3 *2 ;
+});
+console.log(added_filtered_Ages);
+
+const news = [
+    {id: 0, title: "News Item 1", isRead: true},
+    {id: 1, title: "News Item 2", isRead: true},
+    {id: 2, title: "News Item 3", isRead: true},
+    {id: 3, title: "News Item 4", isRead: false},
+    {id: 4, title: "News Item 7", isRead: true},
+    {id: 5, title: "News Item 8", isRead: false},
+];
+
+// Sow indicator
+const mustNotShowIndicator = news.every(function(item){
+    return item.isRead;
+});
+
+console.log(mustNotShowIndicator)
+
+const mustShowIndicator2 = news.some(function(item){
+    return !item.isRead;
+});
+
+console.log(mustShowIndicator2);
+
+// peyda kon
+  
+const findUnreads = news
+.filter(function(item){
+    if(item.isRead === false) return item;
 })
+ 
+.map(function(item){
+    return item.id;
+});
+console.log(findUnreads.length);
+console.log(findUnreads);
+
+// Ostad :))))
+
+console.log({
+    Show: findUnreads.length > 0,
+    count: findUnreads.length,
+});
