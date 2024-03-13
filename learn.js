@@ -110,8 +110,8 @@ const news = [
     {id: 1, title: "News Item 2", isRead: true},
     {id: 2, title: "News Item 3", isRead: true},
     {id: 3, title: "News Item 4", isRead: false},
-    {id: 4, title: "News Item 7", isRead: true},
-    {id: 5, title: "News Item 8", isRead: false},
+    {id: 4, title: "News Item 5", isRead: true},
+    {id: 5, title: "News Item 6", isRead: false},
 ];
 
 // Sow indicator
