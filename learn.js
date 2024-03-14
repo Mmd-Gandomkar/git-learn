@@ -67,7 +67,7 @@ rand(random, random1,random2);
 
 randomNumbers( function (a, b, c) {
      console.log('rand',b, 'rand1',a , 'rand2', c , 'hasel zarb rands =', a * b * c )
-}) ;
+}) 
 
 ages.forEach(function (v, i) {
     total += v
@@ -146,3 +146,78 @@ console.log({
     Show: findUnreads.length > 0,
     count: findUnreads.length,
 });
+
+// function Statement
+
+Sey();
+
+function Sey() {
+    console.log("sey")
+};
+
+// function Expression
+
+//Sey1() ===> Cannot access 'Sey1' before initialization
+
+
+const Sey1 = function() {
+    console.log("sey")
+};
+Sey1();
+
+// Arrow function
+const plus = () => 2 + 2 ;
+console.log(plus())
+
+// Array , Object
+// Spread Operator
+// rest Operator
+
+
+/// spread
+const class1 = ['a' , 'b'];
+
+const class2 = ['d' , 'e'];
+
+const classtotoal = [...class1 , ...class2];
+
+console.log(classtotoal);
+
+
+//String -> Immutable
+const str = "Abc Dfg Hig Klm Nop Qrs Tuv Wxyz"
+console.log(
+str.length,
+str.toLowerCase(),
+str.toUpperCase(),
+str.charAt(20),
+str.charCodeAt(0), //ASCII 
+str.indexOf(" "),
+str.lastIndexOf(" "),
+str.slice(
+    // 0, 28  ✔️✅
+
+    str.indexOf("D"),
+    str.indexOf("o")
+),
+str.substring(8, 18),
+str.replace( 'o', 'z'),
+str.split(' ').join('-')
+);
+
+//Password validator
+const isValidPassword = (pass) => {
+    let isUpper  = false;
+    let isLower  = false;
+    let isNumber = false;
+
+    for (let validator of pass.split('')) {
+         const character = validator.charCodeAt(0);
+         if(character > 64 && character < 91)  {isUpper  = true} 
+         if(character > 96 && character < 123) {isLower  = true} 
+         if(character > 47 && character < 58)  {isNumber = true} 
+    }
+    return isLower && isUpper && isNumber && pass.length >= 8
+} 
+
+console.log(isValidPassword('1s2d1s2D'));
