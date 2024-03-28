@@ -1,0 +1,21 @@
+*{
+   text-align: center;
+   border: border-box;
+   border-radius: 30vw ; 
+}
+
+
+
+#container{
+    margin: 5px 5px 05px 0px;
+width:50vw ;
+font-size: 4vw;
+border: solid  blue  1vw;
+border-radius: 0%;
+margin: 0 auto;
+align-items: center;
+}
+.container1{
+    margin-left: auto;
+    margin-right: auto;
+}
