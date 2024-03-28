@@ -263,7 +263,40 @@ const ages1 = [13, 22, 25 , 33] ;
 
 console.log(ages1.reduce((pervi , cure) => {
 return pervi + cure ;
- }, 0))
+ }, 0));
+
+ let rawData = [
+    { name : 'Animals'   , id : 10} ,
+    { name : 'Batteries' , id :  7} ,
+    { name : 'Baggage'   , id : 12} ,
+    { name : 'Cake'      , id : 17} ,
+];
+
+// const Group = {
+//     10 :{ Group : 'A' , items : [{ name : 'Animals' ,  id : 10}]} ,
+//      7 :{ Group : 'B' , items : [{ name : 'Batteries', id :  7}]} ,
+//     12 :{ Group : 'C' , items : [{ name : 'Baggage',   id : 12}]} ,
+//     17 :{ Group : 'D' , items : [{ name : 'Cake',      id : 17}]} ,
+// };
+
+// const Groups = rawData.reduce ((group , rawData) => {
+//     const { id } = rawData;
+//     group[id] = group[id] ?? [];
+//     group[id].push(rawData);
+//     return group;
+// }, {});
+// console.log(Group);
+
+ const data = Object.values(rawData.reduce((p , c) => {
+       const group = c.name[0];
+       
+
+        if (!p[group]) p[group] = { group: group, items: [c]}
+        else p[group].items.push(c)
+       return p;
+ }, {}));
+ console.log(data);
+
 
 
 const sentence = 'lorem ipsum dolor emet ipsum dollar';
