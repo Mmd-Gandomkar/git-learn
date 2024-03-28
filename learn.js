@@ -213,11 +213,134 @@ const isValidPassword = (pass) => {
 
     for (let validator of pass.split('')) {
          const character = validator.charCodeAt(0);
-         if(character > 64 && character < 91)  {isUpper  = true} 
-         if(character > 96 && character < 123) {isLower  = true} 
-         if(character > 47 && character < 58)  {isNumber = true} 
+         if(character > 64 && character < 91 )  {isUpper  = true} 
+         if(character > 96 && character < 123)  {isLower  = true} 
+         if(character > 47 && character < 58 )  {isNumber = true} 
     }
     return isLower && isUpper && isNumber && pass.length >= 8
 } 
 
 console.log(isValidPassword('1s2d1s2D'));
+
+
+const GenerateRandomPassword = () => {
+    const length = 8;
+    const Lower = 'abcdefghigklmnopqrstuvwxyz';
+    const Upper = Lower.toUpperCase();
+    const Num = '0123456789';
+    let Password = '';
+
+    Password += GetPass(Lower);
+    Password += GetPass(Upper);
+    Password += GetPass(Num);
+
+    for (let i = 3; i < length; i++) {
+        CharacterTypes = [Lower, Upper , Num];
+        CharTypes = CharacterTypes[Math.floor(Math.random() * CharacterTypes.length)];
+        Password += GetPass(CharTypes);
+    }
+    return shuffle(Password);
+};
+
+const GetPass = (CharType) => {
+    return CharType.charAt(Math.floor(Math.random() * CharType.length));
+};
+const shuffle =  (str) => {
+    var a = str.split(""),
+        n = a.length;
+
+    for(var i = n - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+    }
+    return a.join("");};
+
+console.log(GenerateRandomPassword());
+
+const ages1 = [13, 22, 25 , 33] ;
+
+console.log(ages1.reduce((pervi , cure) => {
+return pervi + cure ;
+ }, 0))
+
+
+const sentence = 'lorem ipsum dolor emet ipsum dollar';
+const targetCharacter = 'm';
+
+
+const count = sentence.split('').reduce((prev, cur) => {
+    if (cur === targetCharacter) {
+        return cur.length ;
+    } else { return prev ;}
+
+    // Ternary Operator  *******************************************************************
+
+    // return cur === targetCharacter ?  prev + 1 :  prev ;
+}, 0);
+    console.log(count);
+
+//  class / object
+
+function Apartment ({no , name})  {
+    this.no = no;
+    this.name = name;
+
+    this.elevator = () => {
+        // return 'I am ' + name;
+        /**  Tempelate Literal             *     *         *  **/
+        return `I am ${name}`
+    } 
+};
+  
+
+const v1 = new Apartment ({ no : 1 , name : 'a'});
+const v2 = new Apartment ({ no : 2, name : 'b'});
+
+
+console.log(v1.elevator());
+console.log(v2);
+
+var x = 1;
+console.warn(++x === x++);
+
+
+
+
+// selector in DOM
+
+// console.log(
+//     document.getElementsByTagName('div') ,
+//     document.getElementById('test') , 
+//     document.querySelector('h1#test') ,
+//     document.querySelector('#test') ,
+//     document.querySelectorAll('a[href="test-href"]')
+//     );
+
+    //new ELEMENT      
+    const newElement = document.createElement('div') ;
+    newElement.innerText = ' NEW ELEMENT ADDED' ;
+    newElement.style.backgroundColor = 'yellow' ;
+    newElement.style.color = ' red' ;
+
+    const newElement1 = document.createElement('div') ;
+    newElement1.innerText = ' NEW ELEMENT1 ADDED' ;
+    newElement1.style.backgroundColor = 'yellow' ;
+    newElement1.style.color = ' red' ;
+
+    const newElement2 = document.createElement('div') ;
+    newElement2.innerText = ' NEW ELEMENT2 ADDED' ;
+    newElement2.style.backgroundColor = 'yellow' ;
+    newElement2.style.color = ' red' ;
+
+    const newElement3 = document.createElement('div') ;
+    newElement3.innerText = ' NEW ELEMENT3 ADDED' ;
+    newElement3.style.backgroundColor = 'yellow' ;
+    newElement3.style.color = ' red' ;
+    
+
+    document.getElementById('container').append(newElement) ;
+    document.getElementById('container').prepend(newElement1) ;
+    document.getElementById('container').after(newElement2);
+    document.getElementById('container').before(newElement3);
